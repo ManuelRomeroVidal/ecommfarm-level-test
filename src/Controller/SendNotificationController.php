@@ -3,8 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Provider\SmtpProvider;
-use App\Provider\MailerProvider;
+use App\Provider\Mailer\Smtp\SmtpProvider;
+use App\Provider\Mailer\MailerProvider;
 use App\Service\NotificationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;

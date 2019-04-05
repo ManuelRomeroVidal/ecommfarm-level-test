@@ -1,5 +1,5 @@
 <?php
-namespace App\Provider;
+namespace App\Provider\Mailer;
 
 /**
  * MailerProvider Class

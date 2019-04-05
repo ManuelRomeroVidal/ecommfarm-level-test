@@ -2,7 +2,7 @@
 namespace App\Service;
 
 use App\Entity\User;
-use App\Provider\MailerProvider;
+use App\Provider\Mailer\MailerProvider;
 
 /**
  * NotificationService Class

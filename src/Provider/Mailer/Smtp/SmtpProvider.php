@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Provider;
+namespace App\Provider\Mailer\Smtp;
 
+use App\Provider\Mailer\MailerProviderInterface;
 /**
- * SesProvider Class
+ * SmtpProvider Class
  *
  * @author  Manuel Romero <manuelromerovidal@gmail.com>
  *
  */
-class SesProvider implements MailerProviderInterface
+class SmtpProvider implements MailerProviderInterface
 {
     /*
      *Send message to email and return result
      */
     public function Send(String $email, String $message):bool
     {
-        return false;
+        return true;
     }
 }
