@@ -4,16 +4,22 @@ namespace App\Service;
 use App\Entity\User;
 use App\Provider\MailerProvider;
 
+/**
+ * NotificationService Class
+ *
+ * @author  Manuel Romero <manuelromerovidal@gmail.com>
+ *
+ */
 class NotificationService
 {
-    private $usedService;
+    private $mailerProvider;
 
     /*
      *
      */
-    public function setService(MailerProvider $usedService)
+    public function setService(MailerProvider $mailerProvider)
     {
-        $this->usedService = $usedService;
+        $this->mailerProvider = $mailerProvider;
     }
 
     /*
@@ -21,7 +27,7 @@ class NotificationService
      */
     public function getService()
     {
-        return $this->usedService;
+        return $this->mailerProvider;
     }
 
     /*
@@ -30,6 +36,7 @@ class NotificationService
     public function notify(User $user, $message):bool
     {
         $userEmail = $user->getEmail();
-        return $this->usedService->send($userEmail, $message);
+        $provider = $this->mailerProvider->getProvider();
+        return $provider->send($userEmail, $message);
     }
 }
