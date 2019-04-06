@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="81991be2-79fa-4f46-9729-8e9282dd6c6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Command/SendNotificationCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Command/SendNotificationCommand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SendNotificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SendNotificationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Provider/MailerProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/Mailer/MailerProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Provider/MailerProviderInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/Mailer/MailerProviderInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Provider/SesProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/Mailer/Ses/SesProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Provider/SmtpProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Provider/Mailer/Smtp/SmtpProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/NotificationService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/NotificationService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,32 +18,7 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Command/SendNotificationCommand.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-              <folding>
-                <element signature="e#31#51#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/SendNotificationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="53" column="52" selection-start-line="32" selection-start-column="8" selection-end-line="53" selection-end-column="52" />
-              <folding>
-                <element signature="e#34#54#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,19 +28,19 @@
       <list>
         <option value="$PROJECT_DIR$/src/NotificationService.php" />
         <option value="$PROJECT_DIR$/src/Provider/SmtpProvide.php" />
-        <option value="$PROJECT_DIR$/src/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/config/bundles.php" />
-        <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/Provider/MailerProvider.php" />
         <option value="$PROJECT_DIR$/src/Provider/SmtpProvider.php" />
         <option value="$PROJECT_DIR$/src/Provider/SesProvider.php" />
         <option value="$PROJECT_DIR$/src/Provider/MailerProviderInterface.php" />
-        <option value="$PROJECT_DIR$/src/Controller/SendNotificationController.php" />
         <option value="$PROJECT_DIR$/src/Provider/Mailer/MailerProvider.php" />
         <option value="$PROJECT_DIR$/src/Provider/Mailer/MailerProviderInterface.php" />
         <option value="$PROJECT_DIR$/src/Provider/Mailer/Ses/SesProvider.php" />
         <option value="$PROJECT_DIR$/src/Provider/Mailer/Smtp/SmtpProvider.php" />
         <option value="$PROJECT_DIR$/src/Service/NotificationService.php" />
+        <option value="$PROJECT_DIR$/src/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/Controller/SendNotificationController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/src/Command/SendNotificationCommand.php" />
       </list>
     </option>
@@ -203,7 +176,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,12 +187,6 @@
               <item name="ecommfarm-level-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="ecommfarm-level-test" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ecommfarm-level-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ecommfarm-level-test" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ecommfarm-level-test" type="b2602c69:ProjectViewProjectNode" />
@@ -249,12 +215,19 @@
               <item name="ecommfarm-level-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="ecommfarm-level-test" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ecommfarm-level-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ecommfarm-level-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -302,18 +275,18 @@
       <workItem from="1554397793484" duration="7117000" />
       <workItem from="1554408143242" duration="714000" />
       <workItem from="1554446614398" duration="819000" />
-      <workItem from="1554461164387" duration="4943000" />
+      <workItem from="1554461164387" duration="5135000" />
+      <workItem from="1554484478959" duration="2214000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13593000" />
+    <option name="totallyTimeSpent" value="15999000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -359,20 +332,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/bundles.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -431,22 +390,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SendNotificationController.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="53" column="52" selection-start-line="32" selection-start-column="8" selection-end-line="53" selection-end-column="52" />
-          <folding>
-            <element signature="e#34#54#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="510">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Command/SendNotificationCommand.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+        <state relative-caret-position="-476">
+          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
           <folding>
             <element signature="e#31#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SendNotificationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="18" selection-end-column="3" />
+          <folding>
+            <element signature="e#34#54#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

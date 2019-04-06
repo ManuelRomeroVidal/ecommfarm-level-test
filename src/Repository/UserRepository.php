@@ -14,37 +14,41 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class UserRepository extends ServiceEntityRepository
 {
+    private $usersArray;
+
     public function __construct(RegistryInterface $registry)
     {
+        // Populate array list with Users data
+        $this->usersArray = [
+            [
+                'id' => 1,
+                'email' => "test@ecommfarm.com",
+            ],
+            [
+                'id' => 2,
+                'email' => "otro@otro.com",
+            ],
+        ];
+
         parent::__construct($registry, User::class);
     }
 
-    // /**
-    //  * @return User[] Returns an array of User objects
-    //  */
     /*
-    public function findByExampleField($value)
+     * Search User in Array by Id. If not Found, return false
+     */
+    public function getUserById(int $user_id)
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        foreach ($this->usersArray as $userA) {
+            if($userA['id'] == $user_id) {
+                // Create user
+                $user = new User();
+                $user->setId($userA['id']);
+                $user->setEmail($userA['email']);
 
-    /*
-    public function findOneBySomeField($value): ?User
-    {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+                return $user;
+            }
+        }
+
+        return false;
     }
-    */
 }

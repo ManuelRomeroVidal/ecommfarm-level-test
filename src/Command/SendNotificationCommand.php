@@ -11,13 +11,23 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * SendNotificationCommand Class
+ *
+ * @author  Manuel Romero <manuelromerovidal@gmail.com>
+ *
+ */
 class SendNotificationCommand extends Command
 {
     protected static $defaultName = 'app:send-notification';
-    private $notificationService;
 
-    public function __construct(SesProvider $sesProvider, NotificationService $notificationService, MailerProvider $mailerProvider)
+    private $notificationService;
+    private $container;
+
+    public function __construct(SesProvider $sesProvider, NotificationService $notificationService, MailerProvider $mailerProvider, ContainerInterface $container)
     {
         $this->notificationService = $notificationService;
 
@@ -27,6 +37,8 @@ class SendNotificationCommand extends Command
         // Set the service (sesProvider) to notificationService
         $this->notificationService->setService($mailerProvider);
 
+        $this->container = $container;
+
         parent::__construct();
     }
 
@@ -34,7 +46,7 @@ class SendNotificationCommand extends Command
     {
         $this
             ->setDescription('Send message by SesProvider')
-            ->addArgument('user_id', InputArgument::OPTIONAL, 'Id of User you want to notify')
+            ->addArgument('user_id', InputArgument::REQUIRED, 'Id of User you want to notify')
         ;
     }
 
@@ -51,19 +63,27 @@ class SendNotificationCommand extends Command
             //default message
             $message = "Mensaje que se ha enviado";
 
-            // Get user from ID
-            $user = new User();
+            // Get user from ID (Simnulate doctrine)
+            $entityManager = $this->container->get('doctrine')->getManager();
+            $user = $entityManager->getRepository(User::class)->getUserById($user_id);
 
-            // Send notification (message) to User
-            $result = $this->notificationService->notify($user, $message);
+            if(!$user) {
+                // Not user found
+                $output->write('Usuario no encontrado');
 
-            // write result
-            $output->writeln([
-                'id: ' . $user->getId(),
-                'email: ' . $user->getEmail(),
-                'message: ' . $message,
-                'result: ' . var_export($result, true),
-            ]);
+            } else {
+
+                // Send notification (message) to User
+                $result = $this->notificationService->notify($user, $message);
+
+                // write result
+                $output->writeln([
+                    'id: ' . $user->getId(),
+                    'email: ' . $user->getEmail(),
+                    'message: ' . $message,
+                    'result: ' . var_export($result, true),
+                ]);
+            }
         }
     }
 }

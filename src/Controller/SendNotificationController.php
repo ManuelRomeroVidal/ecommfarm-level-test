@@ -8,6 +8,7 @@ use App\Provider\Mailer\MailerProvider;
 use App\Service\NotificationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -33,8 +34,16 @@ class SendNotificationController extends AbstractController
         //default message
         $message = "Mensaje que se ha enviado";
 
-        // Get user from ID
-        $user = new User();
+        // Get user from ID (Simnulate doctrine)
+        $user = $professional = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->getUserById($id);
+
+        if(!$user) {
+            return new Response(
+                '<html><body>Usuario no encontrado</body></html>'
+            );
+        }
 
         // Set provider (smtp) to mailerProvider
         $mailerProvider->setProvider($smtpProvider);
